@@ -28,14 +28,22 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-12">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center py-12 px-4 bg-brand-cream">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-green mb-4">JT Builds & Landscaping</h1>
-        <p className="text-lg md:text-xl text-brand-green/90 max-w-xl mb-6">
-          Crafting beautiful, lasting outdoor spaces across Surrey & Hampshire. Trusted, experienced, and dedicated to quality.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/contact" className="bg-brand-green text-brand-cream px-6 py-3 rounded-full font-semibold shadow hover:bg-brand-green/90 transition">Get a Quote</Link>
-          <Link href="/gallery" className="bg-brand-neutral text-brand-green px-6 py-3 rounded-full font-semibold shadow hover:bg-brand-gray/40 transition">View Gallery</Link>
+      <section className="w-full bg-brand-cream py-16 px-4 flex flex-col items-center md:items-start justify-center text-center md:text-left">
+        <div className="max-w-3xl w-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-green mb-4">
+            Quality Carpentry & Landscaping — Built to Last
+          </h1>
+          <p className="text-lg md:text-xl text-brand-green/90 mb-8">
+            From patios to decking — local specialists in pulborough.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto justify-center md:justify-start">
+            <Link href="/contact" className="bg-brand-green text-brand-cream px-8 py-3 rounded-full font-semibold shadow hover:bg-brand-green/90 transition text-base">
+              Get a Free Quote
+            </Link>
+            <Link href="/gallery" className="bg-brand-neutral text-brand-green px-8 py-3 rounded-full font-semibold shadow hover:bg-brand-gray/40 transition text-base">
+              View Our Work
+            </Link>
+          </div>
         </div>
       </section>
 
