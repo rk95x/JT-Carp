@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-brand-cream font-sans text-brand-green">
+      <body className={`bg-brand-cream font-sans text-brand-green ${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         <main className="min-h-screen pt-16"> {/* pt-16 for sticky nav offset */}
           {children}
