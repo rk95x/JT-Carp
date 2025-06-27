@@ -1,26 +1,46 @@
-import { FaLeaf, FaHammer, FaTree, FaWater, FaQuoteLeft } from "react-icons/fa";
+import { FaQuoteLeft } from "react-icons/fa";
 import Link from "next/link";
 
-const services = [
+const carpentryServices = [
   {
-    icon: <FaLeaf size={32} className="text-brand-green" />,
-    title: "Garden Design",
-    desc: "Transform your outdoor space with bespoke garden layouts and planting schemes.",
+    title: "Extensions",
+    desc: "Full structural extensions and timber builds",
+    icon: null,
   },
   {
-    icon: <FaHammer size={32} className="text-brand-green" />,
-    title: "Patios & Decking",
-    desc: "Expert installation of patios, decking, and outdoor living areas.",
+    title: "Porches",
+    desc: "Custom-built front and side porches",
+    icon: null,
   },
   {
-    icon: <FaTree size={32} className="text-brand-green" />,
-    title: "Fencing",
-    desc: "Durable, attractive fencing solutions for privacy and security.",
+    title: "Timber Buildings",
+    desc: "Garden rooms, sheds, and workshops",
+    icon: null,
   },
   {
-    icon: <FaWater size={32} className="text-brand-green" />,
-    title: "Turfing & Lawns",
-    desc: "Lush, healthy lawns laid and maintained for year-round beauty.",
+    title: "Garage Conversions",
+    desc: "Transform unused garages into livable rooms",
+    icon: null,
+  },
+  {
+    title: "Doors & Skirting",
+    desc: "Internal and external fitting",
+    icon: null,
+  },
+  {
+    title: "Fitted Furniture",
+    desc: "Wardrobes, shelves, storage units",
+    icon: null,
+  },
+  {
+    title: "Fascia & Soffits",
+    desc: "Roofline carpentry and replacement",
+    icon: null,
+  },
+  {
+    title: "General Carpentry & Repairs",
+    desc: "All types of woodwork fixes and projects",
+    icon: null,
   },
 ];
 
@@ -39,17 +59,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="max-w-5xl mx-auto px-4">
-        <h2 className="text-2xl font-bold text-brand-green mb-6 text-center">Our Services</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {services.map((service) => (
-            <div key={service.title} className="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center border border-brand-neutral">
-              {service.icon}
-              <h3 className="mt-4 text-lg font-semibold text-brand-green">{service.title}</h3>
-              <p className="mt-2 text-sm text-brand-green/80">{service.desc}</p>
-            </div>
-          ))}
+      {/* Our Services Section (Carpentry) */}
+      <section className="w-full bg-white py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-brand-green mb-2 text-center md:text-left">Our Services</h2>
+          <p className="text-brand-green/80 text-base md:text-lg mb-10 text-center md:text-left max-w-2xl">
+            From structural builds to finishing touches, we cover all aspects of carpentry and joinery.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {carpentryServices.map((service) => (
+              <div
+                key={service.title}
+                className="bg-brand-cream rounded-xl border border-brand-neutral p-6 flex flex-col items-center md:items-start text-center md:text-left transition hover:shadow-lg hover:scale-105 duration-200 cursor-pointer"
+              >
+                {/* Placeholder icon */}
+                <div className="w-10 h-10 mb-4 flex items-center justify-center bg-brand-neutral rounded-full text-brand-green text-xl font-bold">
+                  {service.icon || service.title.charAt(0)}
+                </div>
+                <h3 className="text-lg font-semibold text-brand-green mb-1">{service.title}</h3>
+                <p className="text-sm text-brand-green/80">{service.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -58,7 +89,7 @@ export default function Home() {
         <div className="max-w-xl text-center">
           <FaQuoteLeft className="text-brand-green mx-auto mb-2" size={32} />
           <blockquote className="text-lg italic text-brand-green mb-4">
-            “JT Builds transformed our garden beyond our expectations. Professional, friendly, and the quality is outstanding!”
+            &ldquo;JT Builds transformed our garden beyond our expectations. Professional, friendly, and the quality is outstanding!&rdquo;
           </blockquote>
           <div className="text-brand-green font-semibold">— Sarah T., Farnham</div>
         </div>
