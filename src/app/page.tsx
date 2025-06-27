@@ -1,46 +1,86 @@
 import { FaQuoteLeft } from "react-icons/fa";
 import Link from "next/link";
+import {
+  Leaf,
+  Hammer,
+  Fence,
+  Waves,
+  Home as HomeIcon,
+  DoorOpen,
+  Warehouse,
+  Car,
+  DoorClosed,
+  Ruler,
+  LayoutGrid,
+  Layers,
+  Wrench,
+} from "lucide-react";
 
-const carpentryServices = [
+const allServices = [
+  {
+    title: "Garden Design",
+    desc: "Bespoke garden layouts and planting schemes",
+    icon: Leaf,
+  },
+  {
+    title: "Patios & Decking",
+    desc: "Expert installation of patios and decking",
+    icon: Hammer,
+  },
+  {
+    title: "Fencing",
+    desc: "Attractive, secure fencing solutions",
+    icon: Fence,
+  },
+  {
+    title: "Turfing & Lawns",
+    desc: "Lush lawns laid and maintained",
+    icon: Waves,
+  },
   {
     title: "Extensions",
     desc: "Full structural extensions and timber builds",
-    icon: null,
+    icon: HomeIcon,
   },
   {
     title: "Porches",
     desc: "Custom-built front and side porches",
-    icon: null,
+    icon: DoorOpen,
   },
   {
     title: "Timber Buildings",
     desc: "Garden rooms, sheds, and workshops",
-    icon: null,
+    icon: Warehouse,
   },
   {
     title: "Garage Conversions",
-    desc: "Transform unused garages into livable rooms",
-    icon: null,
+    desc: "Transform garages into livable rooms",
+    icon: Car,
   },
   {
-    title: "Doors & Skirting",
-    desc: "Internal and external fitting",
-    icon: null,
+    title: "Doors",
+    desc: "Internal and external door fitting",
+    icon: DoorClosed,
+  },
+  {
+    title: "Skirting",
+    desc: "Precision skirting installation",
+    icon: Ruler,
   },
   {
     title: "Fitted Furniture",
     desc: "Wardrobes, shelves, storage units",
-    icon: null,
+    icon: LayoutGrid,
   },
   {
     title: "Fascia & Soffits",
     desc: "Roofline carpentry and replacement",
-    icon: null,
+    icon: Layers,
   },
   {
     title: "General Carpentry & Repairs",
     desc: "All types of woodwork fixes and projects",
-    icon: null,
+    icon: Wrench,
   },
 ];
 
@@ -59,27 +99,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Services Section (Carpentry) */}
+      {/* Our Services Section (Scrollable) */}
       <section className="w-full bg-white py-16 px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-brand-green mb-2 text-center md:text-left">Our Services</h2>
-          <p className="text-brand-green/80 text-base md:text-lg mb-10 text-center md:text-left max-w-2xl">
-            From structural builds to finishing touches, we cover all aspects of carpentry and joinery.
+          <p className="text-brand-green/80 text-base md:text-lg mb-10 text-center md:text-left max-w-2xl mx-auto md:mx-0">
+            From structural builds to finishing touches, we cover all aspects of carpentry, joinery, and landscaping.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {carpentryServices.map((service) => (
-              <div
-                key={service.title}
-                className="bg-brand-cream rounded-xl border border-brand-neutral p-6 flex flex-col items-center md:items-start text-center md:text-left transition hover:shadow-lg hover:scale-105 duration-200 cursor-pointer"
-              >
-                {/* Placeholder icon */}
-                <div className="w-10 h-10 mb-4 flex items-center justify-center bg-brand-neutral rounded-full text-brand-green text-xl font-bold">
-                  {service.icon || service.title.charAt(0)}
+          <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible scrollbar-thin scrollbar-thumb-brand-neutral/40 scrollbar-track-transparent">
+            {allServices.map((service) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={service.title}
+                  className="min-w-[260px] max-w-xs md:min-w-0 bg-brand-cream rounded-xl border border-brand-neutral p-6 flex flex-col items-center text-center transition hover:shadow-lg hover:scale-105 duration-200 cursor-pointer flex-shrink-0 md:items-start md:text-left"
+                >
+                  <div className="w-12 h-12 mb-4 flex items-center justify-center bg-brand-neutral rounded-full text-brand-green">
+                    <Icon size={28} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-brand-green mb-1">{service.title}</h3>
+                  <p className="text-sm text-brand-green/80">{service.desc}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-brand-green mb-1">{service.title}</h3>
-                <p className="text-sm text-brand-green/80">{service.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
