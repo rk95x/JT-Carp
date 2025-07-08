@@ -133,7 +133,7 @@ export default function Home() {
             ))}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredServices.map(({ title, desc, icon: Icon, category }) => (
+            {filteredServices.map(({ title, desc, icon: Icon }) => (
               <div
                 key={title}
                 className="bg-white p-6 rounded-xl shadow hover:shadow-md transition flex flex-col items-center text-center opacity-100 scale-100 transition-all duration-300"
